@@ -3,16 +3,14 @@ import {
   Text,
   View
 } from 'react-native';
-
-import { styles } from './styles';
+import { ToysList } from 'ToysList';
 
 class Toys extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Main Toys Containers - include flatlist of toy rows
-        </Text>
+      <View>
+        <Text>Search Bar</Text>
+        <ToysList />
       </View>
     );
   }
