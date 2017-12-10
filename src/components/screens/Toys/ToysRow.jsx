@@ -1,37 +1,22 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
-import { ToysItem } from 'ToysItem';
+import { View } from 'react-native';
+import { ToysItem } from './ToysItem';
+import { styles } from './styles';
 
 class ToysRow extends Component {
   render() {
-    const toyData = [{
-      title: 'Đồ chơi 1',
-      imgUrl: 'https://www.toysperiod.com/images/lego-parts.jpg',
-      toys_type: 'small'
-    }, {
-      title: 'Đồ chơi 2',
-      imgUrl: 'https://www.toysperiod.com/images/lego-parts.jpg',
-      toys_type: 'big'
-    }, {
-      title: 'Đồ chơi 3',
-      imgUrl: 'https://www.toysperiod.com/images/lego-parts.jpg',
-      toys_type: 'small'
-    }];
-    const rowType;
-    if (rowType === 'small') {
-      return ( //2 toys nhỏ
-        <View>
-          <ToysItem />
-          <ToysItem />
+    if (this.props.toys.length == 2) {
+      return (
+        <View style={styles.rowSmall}>
+          <ToysItem toyDetail={this.props.toys[0]} />
+          <ToysItem toyDetail={this.props.toys[1]} />
         </View>
-      );
-    } else {
-      return ( // 1 toy lớn
-        <View>
-          <ToysItem />
-        </View>
-      );
-    }
+      )
+    } else return (
+      <View style={styles.rowBig}>
+        <ToysItem toyDetail={this.props.toys[0]} />
+      </View>
+    )
   }
 }
 

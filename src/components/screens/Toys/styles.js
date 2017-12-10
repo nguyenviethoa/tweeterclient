@@ -7,22 +7,25 @@ export const styles = StyleSheet.create({
     paddingTop: 60, //for viewing purpose only, remove soon
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'flex-start',
     marginLeft: 4,
     marginRight: 4,
   },
-  row: {
-    //flexDirection: 'row',
-    //justifyContent: 'space-around',
-    // backgroundColor: 'pink',
-    //height: 190,
+  rowSmall: {
+    flexDirection: 'row',
+    marginBottom: 4,
+    justifyContent: 'space-between',
+  },
+  rowBig: {
+    marginBottom: 4,
   },
   toyContainer: {
     borderWidth: 1,
+    flex: 0.49,
   },
   toyHeader: {
     flexDirection: 'row',
     padding: 7,
+    alignItems: 'center',
   },
   toyTitle: {
     textAlign: 'center',
@@ -36,9 +39,15 @@ export const styles = StyleSheet.create({
     backgroundColor: 'green',
     borderRadius: 10,
     borderWidth: 1,
-    marginTop: 3,
   },
-  toyContent: {
-
+  toyFooter: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  checkbox: {
+    width: 20,
+    height: 20,
   }
 });
