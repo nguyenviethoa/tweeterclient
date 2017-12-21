@@ -4,12 +4,11 @@ import {
   View,
   ScrollView
 } from 'react-native';
-import { ToysList } from './ToysList';
+import ToysList from './ToysList';
+import { styles } from './styles';
 
 export class Toys extends Component {
-
   static navigationOptions = { title: 'Toys', header: null };
-
   render() {
     return (
       <ScrollView>
@@ -20,5 +19,4 @@ export class Toys extends Component {
   }
 }
 
-
-
+export default Toys;

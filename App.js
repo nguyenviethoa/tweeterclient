@@ -5,13 +5,17 @@
  */
 
 import React, { Component } from 'react';
+import { View } from 'react-native';
 import { Toys } from './src/components/screens/Toys';
 import ToysNavigator from './src/navigation/ToysNavigator';
 
 export default class App extends Component {
   render() {
     return (
-      <ToysNavigator />
+      <View>
+        <ToysNavigator />
+        <Toys />
+      </View>
     );
   }
 }

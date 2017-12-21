@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Text, View, Image, Button } from 'react-native';
 import { styles } from './styles';
+import { CheckBox } from 'native-base';
 
-class ToysItem extends Component {
+export default class ToysItem extends Component {
   state = {
     isToySelected: false,
   }
@@ -23,12 +24,7 @@ class ToysItem extends Component {
             title={this.state.isToySelected ? 'Remove Toy' : 'Add Toy'}
             color="#841584"
             onPress={this.selectToy} />
-          {
-            this.state.isToySelected ? (
-              <Image
-                source={require('../../../../assets/icons/ok.png')}
-                style={styles.checkbox} />) : <Text></Text>
-          }
+          {/* <CheckBox style={{ marginRight: 14 }} checked={this.state.isToySelected} /> */}
         </View>
       </View>
     );
