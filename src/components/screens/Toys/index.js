@@ -7,6 +7,9 @@ import {
 import { ToysList } from './ToysList';
 
 export class Toys extends Component {
+
+  static navigationOptions = { title: 'Toys', header: null };
+
   render() {
     return (
       <ScrollView>

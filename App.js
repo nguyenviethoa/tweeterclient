@@ -6,11 +6,12 @@
 
 import React, { Component } from 'react';
 import { Toys } from './src/components/screens/Toys';
+import ToysNavigator from './src/navigation/ToysNavigator';
 
 export default class App extends Component {
   render() {
     return (
-      <Toys />
+      <ToysNavigator />
     );
   }
 }
