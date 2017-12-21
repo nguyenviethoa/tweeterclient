@@ -10,7 +10,7 @@ import Toys from './src/components/screens/Toys';
 export default class App extends Component {
   render() {
     return (
-      <Toys />
+        <Toys />     
     );
   }
 }

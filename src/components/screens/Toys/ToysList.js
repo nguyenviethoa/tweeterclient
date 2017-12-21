@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, FlatList } from 'react-native';
-import { ToysRow } from './RowToys';
+import { View, FlatList, Text } from 'react-native';
+import { ToysRow } from './ToysRow';
 import { arrangeToysArray } from './utility';
+import { styles } from './styles';
 
 class ToysList extends Component {
   state = {
@@ -25,27 +26,27 @@ class ToysList extends Component {
         imgUrl: 'https://www.toysperiod.com/images/lego-parts.jpg',
         toysType: 'big'
       }, {
-        id: 3,
+        id: 4,
         title: 'Đồ chơi 4',
         imgUrl: 'https://www.toysperiod.com/images/lego-parts.jpg',
         toysType: 'small'
       }, {
-        id: 3,
+        id: 5,
         title: 'Đồ chơi 5',
         imgUrl: 'https://www.toysperiod.com/images/lego-parts.jpg',
         toysType: 'big'
       }, {
-        id: 3,
+        id: 6,
         title: 'Đồ chơi 6',
         imgUrl: 'https://www.toysperiod.com/images/lego-parts.jpg',
         toysType: 'big'
       }, {
-        id: 3,
+        id: 7,
         title: 'Đồ chơi 7',
         imgUrl: 'https://www.toysperiod.com/images/lego-parts.jpg',
         toysType: 'small'
       }, {
-        id: 3,
+        id: 8,
         title: 'Đồ chơi 8',
         imgUrl: 'https://www.toysperiod.com/images/lego-parts.jpg',
         toysType: 'small'
@@ -54,10 +55,13 @@ class ToysList extends Component {
     this.setState({ toys: arrangeToysArray(dataFetchFromServer) });
   }
   render() {
+    //line 64 issue voi flatlist
     return (
       <View style={styles.list}>
+        <Text>FlatList</Text>
         <FlatList data={this.state.toys}
-          renderItem={({ item }) => { return <ToysRow toys={item} /> }} />
+          keyExtractor={item => item[0].id}
+          renderItem={({ item }) => ( <ToysRow toys={item} /> )} />
       </View>
     );
   }

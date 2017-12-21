@@ -4,19 +4,20 @@ import {
 
 export const styles = StyleSheet.create({
   list: {
-    paddingTop: 60, //for viewing purpose only, remove soon
     flex: 1,
     flexDirection: 'column',
-    marginLeft: 4,
-    marginRight: 4,
+    marginLeft: 12,
+    marginRight: 12,
+    backgroundColor: 'pink',
+    paddingTop: 30,
   },
   rowSmall: {
     flexDirection: 'row',
-    marginBottom: 4,
+    marginBottom: 6,
     justifyContent: 'space-between',
   },
   rowBig: {
-    marginBottom: 4,
+    marginBottom: 6,
   },
   toyContainer: {
     borderWidth: 1,
