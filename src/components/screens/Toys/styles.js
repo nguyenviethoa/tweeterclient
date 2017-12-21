@@ -4,11 +4,9 @@ import {
 
 export const styles = StyleSheet.create({
   list: {
-    flex: 1,
     flexDirection: 'column',
     marginLeft: 12,
     marginRight: 12,
-    backgroundColor: 'pink',
     paddingTop: 30,
   },
   rowSmall: {

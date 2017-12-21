@@ -58,7 +58,6 @@ class ToysList extends Component {
     //line 64 issue voi flatlist
     return (
       <View style={styles.list}>
-        <Text>FlatList</Text>
         <FlatList data={this.state.toys}
           keyExtractor={item => item[0].id}
           renderItem={({ item }) => ( <ToysRow toys={item} /> )} />
