@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { ToysItem } from './ToysItem';
+import { ToysItem } from '../ToysItem';
 import { styles } from './styles';
 
-class ToysRow extends Component {
+export class ToysRow extends Component {
   render() {
     if (this.props.toys.length == 2) {
       return (
@@ -19,5 +19,3 @@ class ToysRow extends Component {
     )
   }
 }
-
-export default ToysRow;

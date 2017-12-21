@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import {
   Text,
-  View
+  View,
+  ScrollView
 } from 'react-native';
-import { ToysList } from 'ToysList';
+import { ToysList } from './ToysList';
 
-class Toys extends Component {
+export class Toys extends Component {
   render() {
     return (
-      <View>
+      <ScrollView>
         <Text>Search Bar</Text>
         <ToysList />
-      </View>
+      </ScrollView>
     );
   }
 }
 
-export default Toys;
+
 

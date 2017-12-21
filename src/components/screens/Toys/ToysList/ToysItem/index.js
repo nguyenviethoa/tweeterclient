@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, Image, Button } from 'react-native';
 import { styles } from './styles';
 
-class ToysItem extends Component {
+export class ToysItem extends Component {
   state = {
     isToySelected: false,
   }
@@ -26,7 +26,7 @@ class ToysItem extends Component {
           {
             this.state.isToySelected ? (
               <Image
-                source={require('../../../../asset/icons8-checkmark-50.png')}
+                source={require('../../../../../../assets/icons/ok.png')}
                 style={styles.checkbox} />) : <Text></Text>
           }
         </View>
@@ -34,4 +34,3 @@ class ToysItem extends Component {
     );
   }
 }
-export default ToysItem;
