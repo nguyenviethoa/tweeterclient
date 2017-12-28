@@ -4,7 +4,7 @@ import { ToysRow } from './ToysRow';
 import { arrangeToysArray } from '../utility';
 import { styles } from './styles';
 
-export class ToysList extends Component {
+export default class ToysList extends Component {
   state = {
     toys: [],
   }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { View, FlatList, Text } from 'react-native';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
 import { ToysRow } from './ToysRow';
 import { arrangeToysArray } from './utility';
 import { styles } from './styles';
@@ -55,14 +57,17 @@ class ToysList extends Component {
     this.setState({ toys: arrangeToysArray(dataFetchFromServer) });
   }
   render() {
+    console.log(this.props.data.allToy);
     return (
       <View style={styles.list}>
         <FlatList data={this.state.toys}
           keyExtractor={item => item[0].id}
-          renderItem={({ item }) => ( <ToysRow toys={item} /> )} />
+          renderItem={({ item }) => (<ToysRow toys={item} />)} />
       </View>
     );
   }
 }
-
-export default ToysList;
+// Create Query and make a call to graphQL server
+const ALL_TOYS_QUERY = gql`query { allToy { title urlImage } }`;
+const ToysListWithData = graphql(ALL_TOYS_QUERY)(ToysList);
+export default ToysListWithData;

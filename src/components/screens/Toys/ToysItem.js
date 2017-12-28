@@ -3,7 +3,7 @@ import { Text, View, Image, Button } from 'react-native';
 import { styles } from './styles';
 import { CheckBox } from 'native-base';
 
-export default class ToysItem extends Component {
+class ToysItem extends Component {
   state = {
     isToySelected: false,
   }
