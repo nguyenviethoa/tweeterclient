@@ -16,7 +16,7 @@ export class ToysItem extends Component {
           <View style={styles.toyStatus} />
           <Text style={styles.toyTitle}>{this.props.toyDetail.title}</Text>
         </View>
-        <Image source={{ uri: this.props.toyDetail.imgUrl }}
+        <Image source={{ uri: this.props.toyDetail.urlImage }}
           style={{ width: '100%', height: 150 }} />
         <View style={styles.toyFooter} >
           <Button

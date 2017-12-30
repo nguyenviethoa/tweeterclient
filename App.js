@@ -1,6 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
+/*
  * @flow
  */
 
@@ -15,8 +13,12 @@ import Toys from './src/components/screens/Toys';
 // import ToysNavigator from './src/navigation/ToysNavigator';
 
 //Create Apollo client default uri is localhost:3000/graphql
+const serverURL = 'http://27.78.16.8:3005/graphql';
+
+//test on local when server is not avaialble
+const localURL = 'http://localhost:3000/graphql';
 const client = new ApolloClient({
-  link: new HttpLink({ uri: 'http://localhost:3000/graphql'}),
+  link: new HttpLink({ uri: localURL }),
   cache: new InMemoryCache()
 });
 
