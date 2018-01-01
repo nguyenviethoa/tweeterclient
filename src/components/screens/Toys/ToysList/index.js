@@ -10,8 +10,10 @@ class ToysList extends Component {
   render() {
     let toysList = [];
     if (this.props.data.loading) {
-      return <View><Text>Loading...</Text></View>
-    } else { toysList = arrangeToysArray(this.props.data.allToy); }
+      return (<View><Text>Loading...</Text></View>);
+    } 
+    console.log(this.props);
+    toysList = arrangeToysArray(this.props.data.allToy); 
     return (
       <View style={styles.list}>
         <FlatList data={toysList}
@@ -22,6 +24,8 @@ class ToysList extends Component {
   }
 }
 // Create Query and make a call to graphQL server
-const ALL_TOYS_QUERY = gql`query { allToy { id title urlImage toysType {toyTypeName}}}`;
+const ALL_TOYS_QUERY = gql`query { allToy { id title urlImage toyType {toyTypeName}}}`;
 const ToysListWithData = graphql(ALL_TOYS_QUERY)(ToysList);
+
+
 export default ToysListWithData;
