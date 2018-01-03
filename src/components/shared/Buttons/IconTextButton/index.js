@@ -5,7 +5,7 @@ import styles from './styles';
 
 const IconTextButton = ({ onPress, iconName, title, style }) => {
     return (
-      <TouchableOpacity style={style} onPress={onPress.bind(this)} >
+      <TouchableOpacity style={style} onPress={onPress ? onPress.bind(this) : () => {}} >
         <View style={styles.savebutton}>
           {iconName !== undefined ?
           <Icon
