@@ -24,8 +24,8 @@ class BottomBar extends Component {
       let toogleMoreButton = <BottomBarButton onPress={this.handleSeeMorePress.bind(this)} iconName='dots-horizontal' label= 'More'  />
       let additionalBottomBarButtons = <View />
       if (this.state.seeMore) {
-        const childrenInSecondRow = childrenToBeShown.slice(5, 7)
-        const childrenInThirdRow = childrenToBeShown.slice(7, 11)
+        const childrenInSecondRow = childrenToBeShown.slice(5, 9)
+        const childrenInThirdRow = childrenToBeShown.slice(9, 11)
         toogleMoreButton = <BottomBarButton onPress={this.handleSeeLessPress.bind(this)} iconName='close' label= 'Less' />
         console.log("children in second row: " + childrenInSecondRow)
         console.log("children in third row: " + childrenInThirdRow)
@@ -43,8 +43,10 @@ class BottomBar extends Component {
       }
 
       let content = childrenToBeShown
-      if(childrenToBeShown.length > 4) {
-        const childrenInFirstRow = childrenToBeShown.slice(0,3)
+      console.log(content);
+      console.log(childrenToBeShown.length);
+      if(childrenToBeShown.length > 5) {
+        const childrenInFirstRow = childrenToBeShown.slice(0,4)
         console.log("children in the first row: " + childrenInFirstRow)
         content = (
             <View style={{flexDirection: 'column', flex:1}}>

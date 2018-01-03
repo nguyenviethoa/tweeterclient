@@ -15,11 +15,28 @@ class Toys extends Component {
         <ScrollView>
           <ToysList />
         </ScrollView>
+        {/* <View style={styles.footer} /> */}
+
         <BottomBar>
           <BottomBarButton
             onPress={() => {}}
             iconName='account'
             label='Profile'
+          />
+          <BottomBarButton
+            onPress={() => {}}
+            iconName='bell-ring'
+            label='Notifications'
+          />
+          <BottomBarButton
+            onPress={() => {}}
+            iconName='note-outline'
+            label='History'
+          />
+          <BottomBarButton
+            onPress={() => {}}
+            iconName='currency-usd'
+            label='Balance'
           />
         </BottomBar>
       </View>  

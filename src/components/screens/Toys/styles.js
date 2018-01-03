@@ -7,6 +7,10 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#D3D3D3',
   },
+  footer: {
+    height: 100,
+    flexDirection: 'row'
+  },
   list: {
     flexDirection: 'column',
     marginLeft: 12,

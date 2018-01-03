@@ -12,5 +12,10 @@ export const styles = StyleSheet.create({
   },
   container: {
     flex: 1
+  },
+  listFooter: {
+    paddingVertical: 20, 
+    borderTopWidth: 1, 
+    borderColor: "#CED0CE"
   }
 });
