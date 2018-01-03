@@ -3,6 +3,10 @@ import {
 } from 'react-native';
 
 export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#D3D3D3',
+  },
   list: {
     flexDirection: 'column',
     marginLeft: 12,
