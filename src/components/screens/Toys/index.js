@@ -16,11 +16,11 @@ class Toys extends Component {
           <ToysList />
         </ScrollView>
         <BottomBar>
-            <BottomBarButton
-              onPress={() => {}}
-              iconName='tooltip-edit'
-              label='Profile'
-            />
+          <BottomBarButton
+            onPress={() => {}}
+            iconName='account'
+            label='Profile'
+          />
         </BottomBar>
       </View>  
     );
