@@ -5,8 +5,7 @@ import {
   Image,
 } from 'react-native';
 import { styles } from './styles';
-import { IconTextButton } from '../../shared';
-import StyledTextInput from '../../shared/Input/TextInput';
+import { IconTextButton, StyledTextInput } from '../../shared';
 
 class SignUp extends Component {
   static navigationOptions = { title: 'SignUp', header: null };
