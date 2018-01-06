@@ -6,23 +6,27 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        backgroundColor: 'azure'
+        backgroundColor: 'azure',
     },
     title: {
         marginTop: 30,
+        marginBottom: 10,
         fontSize: 15,
     },
-    wrapper1: {
+    input: {
         flex: 1,
+        justifyContent: 'space-around',
+        marginTop: '20%',
+        marginBottom: '20%'
+    },
+    wrapper: {
         alignItems: 'center'
     },
     loginButton: {
         backgroundColor: 'pink',
-        marginTop: '50%',
-        width: 300
+        width: 250,
     },
     loginButtonText: {
-        textAlign: 'center',
         fontSize: 25,
     },
     text: {
