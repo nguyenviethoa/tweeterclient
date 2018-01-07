@@ -1,3 +1,3 @@
-import StyledInputText from './InputText';
+import StyledInputText from './StyledTextInput';
 
 export { StyledInputText };

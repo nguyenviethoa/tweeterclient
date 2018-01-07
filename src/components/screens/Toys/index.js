@@ -1,17 +1,34 @@
 import React, { Component } from 'react';
 import {
   View,
-  ScrollView
+  ScrollView,
+  StatusBar
 } from 'react-native';
 import ToysList from './ToysList';
 import { styles } from './styles';
-import { BottomBar, BottomBarButton } from '../../shared';
+import { BottomBar, BottomBarButton, TopBar } from '../../shared';
 
 class Toys extends Component {
   static navigationOptions = { title: 'Toys', header: null };
+
+  constructor(props) {
+    super(props);
+    this.onSideBarPress = this.onSideBarPress.bind(this);
+  }
+
+  componentDidMount() {
+    StatusBar.setHidden(true);
+  }
+
+  onSideBarPress() {
+    console.log('on sidebar pressed');
+    this.props.navigation.navigate('DrawerOpen');
+  }
+
   render() {
     return (
       <View style={styles.container}>
+        <TopBar onSideBarPress={this.onSideBarPress} />
         <ScrollView>
           <ToysList />
         </ScrollView>

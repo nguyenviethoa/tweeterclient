@@ -12,7 +12,7 @@ export default class StyledTextInput extends Component {
   render() {
     return (
       <View style={styles.wrapper}>
-        <Icon style={styles.icon} name={this.props.iconName} />
+        <Icon style={styles.icon} name={this.props.iconName} size={this.props.iconSize} color={this.props.iconColor} />
         <TextInput
           style={styles.text}
           placeholder={this.props.label}
