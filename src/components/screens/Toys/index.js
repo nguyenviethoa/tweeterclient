@@ -28,7 +28,7 @@ class Toys extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TopBar onSideBarPress={this.onSideBarPress} />
+        <TopBar onSideBarPress={this.onSideBarPress} badge_color='red' cart_number={5} />
         <ScrollView>
           <ToysList />
         </ScrollView>

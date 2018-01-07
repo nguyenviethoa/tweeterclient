@@ -16,8 +16,8 @@ export const styles = StyleSheet.create({
     borderRadius: 20,
     borderWidth: 1,
     height: 30,
-    paddingLeft: 10,
-    paddingRight: 20,
+    // paddingLeft: 10,
+    // paddingRight: 10,
     backgroundColor: 'white',
     borderColor: Colors.coachColor
   },
@@ -31,13 +31,12 @@ export const styles = StyleSheet.create({
   },
   buttonRight: {
     flex: .15,
-    paddingRight: 5,
-    alignSelf: 'flex-end',
+    paddingRight: 5
   },
-
   iconLeft: {
     fontSize: 40
   },
-  iconRight: {
+  badge: {
+    
   }
 });

@@ -3,6 +3,7 @@ import { View, TextInput, Text, TouchableHighlight, Dimensions } from 'react-nat
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { styles } from './styles';
 import StyledTextInput from '../Inputs/StyledTextInput';
+import Badge from '../Badge';
 
 //Text input with style
 export default class TopBar extends Component {
@@ -24,9 +25,10 @@ export default class TopBar extends Component {
         </View>
         
         <View style={styles.buttonRight}>
-          <TouchableHighlight activeOpacity={0.6} onPress={this.props.onPress}>
+          <TouchableHighlight style={{ alignSelf: 'flex-end' }} activeOpacity={0.6} onPress={this.props.onPress}>
             <View style={styles.buttonMain}>
               <Icon name='shopping-cart' size={30} color='#23394a' />
+              <Badge color={this.props.badge_color} number={this.props.cart_number} />
             </View>
           </TouchableHighlight>
         </View>

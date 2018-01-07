@@ -17,8 +17,10 @@ export default class StyledTextInput extends Component {
           style={styles.text}
           placeholder={this.props.label}
           onChangeText={(text) => this.setState({ text })}
-          value={this.state.text} />
+          value={this.state.text}
+          underlineColorAndroid='transparent'
+        />
       </View>
-    )
+    );
   }
 }
