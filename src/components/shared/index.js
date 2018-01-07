@@ -7,10 +7,10 @@ import { FormButton, CreateFormButton, DeleteFormButton, GreenFormButton, SaveFo
     BottomBarButton, DeleteBottomBarButton, DeleteRowButtonTextIcon, ShowActionDotsButton }
     from './Buttons';
 
-import { StyledInputText } from './Inputs';    
+import { StyledTextInput } from './Inputs';    
 
 export {
-	BottomBar, StyledInputText, TopBar,
+	BottomBar, StyledTextInput, TopBar,
 
 	FormButton, CreateFormButton, DeleteFormButton, GreenFormButton, SaveFormButton,
     UpdateFormButton, RowButton, DeleteRowButton, EditRowButton, IconTextButton,
