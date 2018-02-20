@@ -3,15 +3,15 @@ import gql from 'graphql-tag';
 
 export const GetAllToysQuery = gql`
         query GetAllToysQuery {
-            allToy { 
-                id
-                title 
-                urlImage 
-                toyType {
-                    toyTypeName
-                }
+           GetAllToys{
+            toyKind{
+              toyKindName
             }
+            urlImage
+            title
+            description
+            id
+          }
         }
     `;
-
 
