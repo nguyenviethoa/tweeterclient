@@ -8,9 +8,8 @@ import { ApolloClient } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import Toys from './src/components/screens/Toys';
 // Error Toys should decalre a screen Line 15 fix later 
-import ToysNavigator from './src/navigation/ToysNavigator';
+import ToysNavigator from './navigation/ToysNavigator';
 
 //Create Apollo client default uri is localhost:3000/graphql
 const serverURL = 'http://27.78.16.8:3005/graphql';

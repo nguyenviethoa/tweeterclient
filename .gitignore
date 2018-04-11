@@ -37,6 +37,9 @@ npm-debug.log
 yarn-error.log
 package-lock.json
 
+#typescript
+artifacts
+
 # BUCK
 buck-out/
 \.buckd/
