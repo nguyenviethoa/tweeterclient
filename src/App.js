@@ -12,25 +12,27 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import ToysNavigator from './navigation/ToysNavigator';
 
 //Create Apollo client default uri is localhost:3000/graphql
-const serverURL = 'http://27.78.16.8:3005/graphql';
+const serverURL = 'https://staging.holdsport.dk/graphql';
 
 //test on local when server is not avaialble
-const localURL = 'http://localhost:4000/graphql';
+const localURL = 'http://192.168.1.130:4000/graphql';
+const dataIdFromObject = object => `${object.__typename}__${object.id || object.tweet_id}`;
+
 const client = new ApolloClient({
-  link: new HttpLink({ uri: localURL }),
-  cache: new InMemoryCache()
+  link: new HttpLink({ uri: serverURL }),
+  cache: new InMemoryCache(dataIdFromObject)
 });
 
 export default class App extends Component {
   render() {
     return (
-      // <ApolloProvider client={client}>
-      //     <ToysNavigator />
-      // </ApolloProvider>
+      <ApolloProvider client={client}>
+          <ToysNavigator />
+      </ApolloProvider>
 
-      <View>
-        <Text> test typescript </Text>
-      </View>
+      // <View>
+      //   <Text> test typescript </Text>
+      // </View>
     );
   }
 }

@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { View, FlatList, Text, ActivityIndicator } from 'react-native';
+import { View, Text, ActivityIndicator } from 'react-native';
 import { graphql } from 'react-apollo';
-import { ToysRow } from './ToysRow';
-import { arrangeToysArray } from '../utility';
 import { styles } from './styles';
-import { GetAllToysQuery } from './queries';
+import { tweetsQuery, LinksQuery } from './queries';
 
-@graphql(GetAllToysQuery, { name: 'GetAllToysQuery' })
+// @graphql(tweetsQuery, { name: 'tweetsQuery' })
 class ToysList extends Component {
   
   constructor(props) {
@@ -21,26 +19,25 @@ class ToysList extends Component {
       </View>  
     );
   }
+
   render() {
-    let toysList = [];
-    const { loading, allToy } = this.props.GetAllToysQuery;
+    console.log('start list', this.props.data);
+    const { error, loading } = this.props.data;
+    if (error) {
+      console.log('error', error);
+    }
     if (loading) {
-      return (<View><Text>Loading...</Text></View>);
-    } 
-    console.log(this.props);
-    toysList = arrangeToysArray(allToy); 
+      return <ActivityIndicator />;
+    }
+
+    console.log('prop', this.props);
     return (
-      <View style={styles.list}>
-        <FlatList 
-          data={toysList}
-          keyExtractor={item => item[0].id}
-          renderItem={({ item }) => (<ToysRow toys={item} />)}
-          ListFooterComponent={this.renderFooter} 
-        />
+      <View>
+        <Text> Toy List A</Text>
       </View>
     );
   }
 }
 
-export default ToysList;
+export default graphql(LinksQuery)(ToysList);
 

@@ -5,7 +5,7 @@
 	"scripts": {
 		"lint": "tslint src/**/*.ts",
 		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest",
+		"test": "jest --coverage",
 		"tsc": "tsc",
 		"clean": "rimraf artifacts",
 		"build": "npm run clean && npm run tsc --",
@@ -44,7 +44,18 @@
 		"typescript": "^2.8.1"
 	},
 	"jest": {
-		"preset": "react-native"
+		"preset": "react-native",
+		"testRegex": "artifacts/.+\\.(test|spec).js$",
+		"coverageDirectory": "coverage",
+		"coverageReporters": [
+			"text-summary",
+			"html"
+		],
+		"collectCoverageFrom": [
+			"artifacts/**/*.js",
+			"!artifacts/**/*.spec.js",
+			"!artifacts/**/*.index.js"
+		]
 	},
 	"rnpm": {
 		"assets": [

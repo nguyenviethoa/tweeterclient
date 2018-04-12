@@ -25,13 +25,9 @@ const client = new ApolloClient({
 export default class App extends Component {
   render() {
     return (
-      // <ApolloProvider client={client}>
-      //     <ToysNavigator />
-      // </ApolloProvider>
-
-      <View>
-        <Text> test typescript </Text>
-      </View>
+      <ApolloProvider client={client}>
+          <ToysNavigator />
+      </ApolloProvider>
     );
   }
 }
