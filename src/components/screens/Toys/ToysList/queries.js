@@ -23,19 +23,4 @@ query getTweets{
 }
 `;
 
-const LinksQuery = gql`
-  query links {
-    links {
-      id
-      name
-      team{
-        name
-      }
-      url
-      thumbnail_url
-      description
-    }
-  }
-`;
-
-export { userQuery, tweetsQuery, LinksQuery };
+export { userQuery, tweetsQuery };

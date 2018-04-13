@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, ActivityIndicator } from 'react-native';
 import { graphql } from 'react-apollo';
 import { styles } from './styles';
-import { tweetsQuery, LinksQuery } from './queries';
+import { tweetsQuery } from './queries';
 
 // @graphql(tweetsQuery, { name: 'tweetsQuery' })
 class ToysList extends Component {
@@ -39,5 +39,5 @@ class ToysList extends Component {
   }
 }
 
-export default graphql(LinksQuery)(ToysList);
+export default graphql(tweetsQuery)(ToysList);
 
