@@ -1,14 +1,16 @@
 /*
  * @flow
  */
-
+import { AsyncStorage } from 'react-native';
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { ApolloClient } from 'apollo-client';
+import { onError } from 'apollo-link-error';
 import { ApolloProvider } from 'react-apollo';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloLink, concat } from 'apollo-link';
+
 // Error Toys should decalre a screen Line 15 fix later 
 import ToysNavigator from './navigation/ToysNavigator';
 
@@ -23,7 +25,8 @@ const authMiddleware = new ApolloLink((operation, forward) => {
   // add the authorization to the headers
   operation.setContext({
     headers: {
-      authorization: localStorage.getItem('token') || null,
+      // authorization: localStorage.getItem('token') || null,
+      authorization: AsyncStorage.getItem('token') || null,
     } 
   });
 
@@ -32,11 +35,30 @@ const authMiddleware = new ApolloLink((operation, forward) => {
 
 const httpLink = new HttpLink({ uri: localURL });
 
+// const client = new ApolloClient({
+//   link: concat(authMiddleware, httpLink),
+//   cache: new InMemoryCache(dataIdFromObject),
+//   onError: (e) => { console.log('apollo client get errors: ', e.graphQLErrors) },
+// });
+
 const client = new ApolloClient({
-  link: concat(authMiddleware, httpLink),
-  cache: new InMemoryCache(dataIdFromObject),
-  onError: (e) => { console.log(e.graphQLErrors) },
-});
+  link: ApolloLink.from([
+    onError(({ graphQLErrors, networkError }) => {
+      if (graphQLErrors)
+        graphQLErrors.map(({ message, locations, path }) =>
+          console.log(
+            `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
+          ),
+        );
+      if (networkError) console.log(`[Network error]: ${networkError}`);
+    }),
+    new HttpLink({
+      uri: localURL,
+      credentials: 'same-origin'
+    })
+  ]),
+  cache: new InMemoryCache()
+})
 
 export default class App extends Component {
   render() {
