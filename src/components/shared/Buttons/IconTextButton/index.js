@@ -1,22 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 
-const IconTextButton = ({ onPress, iconName, title, style }) => {
+class IconTextButton extends Component{
+  render(){
     return (
-      <TouchableOpacity style={style} onPress={onPress ? onPress.bind(this) : () => {}} >
+      <TouchableOpacity style={this.props.style} onPress={this.props.onPress} >
         <View style={styles.savebutton}>
-          {iconName !== undefined ?
-          <Icon
-              name={iconName} backgroundColor='transparent' size={14}
-              color='#294086' style={styles.buttonicon}
-          /> : null
-          }
-          <Text style={styles.buttontext}>{title}</Text>
+          <Text style={styles.buttontext}>{this.props.title}</Text>
         </View>
       </TouchableOpacity>
     );
-};
-
+  }
+}
 export default IconTextButton;

@@ -3,17 +3,16 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   savebutton: {
     flexDirection: 'row',
-    alignSelf: 'flex-end',
+    alignSelf: 'center',
+    justifyContent: 'center',
   },
   buttontext: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#294086',
+    color: '#008fff',
     paddingLeft: 10,
+    paddingTop: 10,
   },
-  buttonicon: {
-    paddingTop: 5
-  }
 });
 
 export default styles;

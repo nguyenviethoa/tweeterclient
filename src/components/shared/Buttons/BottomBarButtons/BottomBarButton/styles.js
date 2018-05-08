@@ -10,11 +10,11 @@ const styles = StyleSheet.create({
       paddingBottom: 10,
   },
   bottomBarButtonIcon: {
-      color: 'white',
+      color: '#555555',
       fontSize: 24,
   },
   bottomBarButtonText: {
-      color: 'white',
+      color: '#555555',
       fontSize: 10,
       textAlign: 'center'
   },

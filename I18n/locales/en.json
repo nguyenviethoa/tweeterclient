@@ -1,0 +1,8 @@
+{
+  "signup": {
+    "title": "Signup Twitter",
+    "account": "Already Have Account? ",
+    "login": "Login Here",
+    "login_with": "...or login with:",
+  },
+}

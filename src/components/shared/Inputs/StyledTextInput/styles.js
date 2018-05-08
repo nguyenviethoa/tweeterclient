@@ -4,19 +4,16 @@ import {
 
 export const styles = StyleSheet.create({
   wrapper: {
-    borderBottomWidth: 1,
-    borderColor: 'gray',
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: 250,
+    width: 320,
+    height: 40,
+    backgroundColor: '#fff',
+    marginTop: 20,
   },
   text: {
-    height: 25,
-    width: 180,
-    marginLeft: 10,
+    width: 320,
     fontSize: 14,
+    borderRadius: 5,
   },
-  icon: {
-    fontSize: 25,
-  }
 });
