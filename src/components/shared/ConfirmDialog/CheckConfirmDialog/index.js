@@ -3,7 +3,7 @@ import { View,Text } from 'react-native';
 import { ConfirmDialog } from '../index';
 import { SaveFormButton } from '../../'
 import Icon from 'react-native-vector-icons/FontAwesome';
-import I18n from '../../../../../I18n/index';
+import I18n from '../../../../I18n/index';
 import styles from './styles';
 import Colors from '../../../../constants/colors';
 

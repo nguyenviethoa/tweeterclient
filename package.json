@@ -3,15 +3,18 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"lint": "tslint src/**/*.ts",
 		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest --coverage",
+		"test": "jest",
 		"tsc": "tsc",
-		"clean": "rimraf artifacts",
+		"clean": "rimraf build",
 		"build": "npm run clean && npm run tsc --",
 		"watch": "npm run build -- -w",
-		"start:ios": "npm run build && rm -rf node_modules && npm install && npm run build && concurrently -r 'npm run watch' 'react-native run-ios'",
-		"start:android": "npm run build && rm -rf node_modules && npm install && npm run build && concurrently -r 'npm run watch' 'react-native run-android'"
+		"start:ios": "npm run build && concurrently -r 'npm run watch' 'react-native run-ios'",
+		"start-clean:ios": "npm run build && rm -rf node_modules && npm install && npm run build && concurrently -r 'npm run watch' 'react-native run-ios'",
+		"start-clean-iphone8:ios": "npm run build && rm -rf node_modules && npm install && npm run build && concurrently -r 'npm run watch' 'react-native run-ios --simulator=\"iPhone 8\" '",
+		"start:android": "npm run build && concurrently -r 'npm run watch' 'react-native run-android'",
+		"start-clean-metro:ios": "rm -rf node_modules/metro && npm install && npm run build && concurrently -r 'npm run watch' 'react-native run-ios'",
+		"android-linux": "react-native bundle --platform android --dev false --entry-file src/index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android"
 	},
 	"dependencies": {
 		"apollo-boost": "^0.1.4",

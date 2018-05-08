@@ -16,7 +16,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { graphql } from 'react-apollo';
 import SignupMutation from './mutations';
 import SuccessFeedback from '../../inheritables/SuccessFeedback';
-import I18n from '../../../../I18n';
+import I18n from '../../../I18n';
 
 @graphql(SignupMutation)
 class SignUp extends SuccessFeedback {

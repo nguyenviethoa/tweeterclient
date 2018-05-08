@@ -4,7 +4,7 @@ import Modal from 'react-native-modal';
 import styles from './styles';
 import { HeaderBar, RefreshBar } from '..';
 import Row from './Row';
-import I18n from '../../../../../I18n';
+import I18n from '../../../../I18n';
 
 class ProfileMenu extends Component {
 
